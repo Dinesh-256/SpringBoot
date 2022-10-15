@@ -22,6 +22,10 @@ public class EmployeeController {
 		return empService.add(emp);
 		
 	}
+	@GetMapping(value="/findId/{id}")
+	public Employer getFindid(@PathVariable int id) {
+		return empService.getFindid(id);
+	}
 	@PutMapping(value="/update")
 	public String updateinfo(@RequestBody Employer emp) {
 		return empService.add(emp);
@@ -42,6 +46,7 @@ public class EmployeeController {
 	public String bulkData(@RequestBody List<Employer> emp) {
 		return empService.bulkData(emp);
 	}
+	
 	@DeleteMapping(value="/deleteAlls")
 	public String deleteAll() {
 		return empService.deleteAll();
